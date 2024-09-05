@@ -8,7 +8,7 @@ import json
 import re
 
 SCOPES = ['https://www.googleapis.com/auth/drive']
-SERVICE_ACCOUNT_FILE = 'service_account.json'
+SERVICE_ACCOUNT_FILE = json.loads(st.secrets["google"]["service_account_info"])
 PARENT_FOLER_ID = "12RWE1TVfEsjR_sX14JdzXYAM6idVeeZ1"
 
 pattern = r'"location": "([^"]+)"'
