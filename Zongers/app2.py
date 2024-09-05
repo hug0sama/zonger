@@ -114,7 +114,7 @@ if st.button("Generate", type="primary"):
 
 if st.button("upload"):
 	print(st.session_state.json)
-	creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+	creds = service_account.Credentials.from_service_account_info(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 	service = build('drive', 'v3', credentials=creds)
 	json_data = json.dumps(st.session_state.json, indent=4).encode('utf-8')
 	media = MediaInMemoryUpload(json_data, mimetype='application/json')
