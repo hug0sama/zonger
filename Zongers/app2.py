@@ -65,9 +65,6 @@ if st.button("Generate", type="primary"):
 		response_format={"type": "json_object"}
 	)
 	str_answer = json_response.choices[0].message.content.strip()
-	json_answer = json.loads(str_answer)
-
-	st.session_state.json = json_answer
 	
 
 	cities = re.findall(pattern, str_answer)
@@ -92,6 +89,8 @@ if st.button("Generate", type="primary"):
 	url_index = 0
 	pattern2 = r'"postImageUrl":\s*"https://[^"]*"'
 	str_answer = re.sub(pattern2, replace_urls, str_answer)
+	json_answer = json.loads(str_answer)
+	st.session_state.json = json_answer
 
 	txt_response = client.chat.completions.create(
 
