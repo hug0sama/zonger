@@ -73,7 +73,7 @@ if st.button("Generate", type="primary"):
 
 		img_response = client.images.generate(
 			model = "dall-e-3",
-			prompt = f"generate a realistic Instagram vibe travel photo at {city} without people and brings out the characteristic of {city}",
+			prompt = f"generate a realistic Instagram vibe travel photo at {city} without people and brings out the art style and the characteristic of {city}",
 			size = "1024x1024",
 			quality = "standard",
 			)
