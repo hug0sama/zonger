@@ -22,16 +22,16 @@ if 'json' not in st.session_state:
 	st.session_state.json = None
 
 client = OpenAI(
-  api_key = st.secrets["OPENAI_API_KEY"],  # this is also the default, it can be omitted
+  api_key = st.secrets["OPENAI_API_KEY"],
 )
 
 st.title("Generate your posts for your character!")
 
 name = st.text_input("Choose a charcter: ")
 post_count = st.number_input("How many posts do u want", min_value=1, max_value=10, value=1, step=1)
-places_count = st.number_input("how many places do u wanna go", min_value=1, max_value=7, value=3, step=1)
+places_count = st.number_input("how many places do u wanna go", min_value=1, max_value=5, value=3, step=1)
 s_city = st.text_input("any specify city u want to go, leave blank if no")
-others = st.text_input("any special requirement, leave blank if no")
+others = st.text_input("any special requirements, leave blank if no")
 if s_city:
 	city = "please include " + s_city + " in one of the post"
 else:
